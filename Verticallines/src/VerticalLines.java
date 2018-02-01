@@ -9,11 +9,11 @@ public class VerticalLines {
 		
 		Scanner sc=new Scanner(System.in);
 		int width=sc.nextInt();
-		int hieght=sc.nextInt();
+		int height=sc.nextInt();
 		int sizetocompare=0;
-		int actualsize=width*hieght;
+		int actualsize=width*height;
 		int nextVal = 0;
-		int [][]matrix=new int[width][hieght];
+		int [][]matrix=new int[width][height];
 		Random r=new Random();
 		List <Integer> list=new ArrayList<>();
 		while(sizetocompare<actualsize){
@@ -40,13 +40,13 @@ public class VerticalLines {
 			sizetocompare+=timesnum+timesspace;
 		}
 		for(int i=0;i<width;i++){
-			for(int j=0;j<hieght;j++){
+			for(int j=0;j<height;j++){
 				Object ob=list.get(nextVal++);
 					matrix[i][j]=(int)ob;
 				
 			}
 		}
-		for(int i=0;i<hieght;i++){
+		for(int i=0;i<height;i++){
 			for(int j=0;j<width;j++){
 				if(matrix[j][i]==999){
 					System.out.print(" ");
