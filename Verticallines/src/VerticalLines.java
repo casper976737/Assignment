@@ -1,58 +1,58 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class VerticalLines {
 
 	public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in);
-		int X=sc.nextInt();
-		int Y=sc.nextInt();
-		int size=0;
-		int actualSize=Y*X;
-		boolean isfirst=true;
-		int next=0;
-		int mat[][]=new int[X][Y];
-		List <Integer> list=new ArrayList<Integer>();
-		while(size<actualSize){
-			int times=(int)(Math.random()*10);
-			int num=(int)(Math.random()*10);
-			if(size+times>actualSize){
-				times=actualSize-size;
+		int width=sc.nextInt();
+		int hieght=sc.nextInt();
+		int sizetocompare=0;
+		int actualsize=width*hieght;
+		int nextVal = 0;
+		int [][]matrix=new int[width][hieght];
+		Random r=new Random();
+		List <Integer> list=new ArrayList<>();
+		while(sizetocompare<actualsize){
+			int timesnum=r.nextInt(9);
+			int num=r.nextInt(9);
+			if(sizetocompare+timesnum>actualsize){
+				timesnum=actualsize-sizetocompare;
 			}
-			for(int i=0;i<times;i++){
+			for(int i=0;i<timesnum;i++){
 				list.add(num);
 			}
-			int times2=(int)(Math.random()*10);
-			if(times2==0){
-				while(times2==0){
-					times2=(int)(Math.random()*10);
+			int timesspace=r.nextInt(9);
+			if(timesspace==0){
+				while(timesspace==0){
+					timesspace=r.nextInt(9);
 				}
 			}
-			if(size+times2>actualSize){
-				times2=actualSize-size;
+			if(sizetocompare+timesspace>actualsize){
+				timesspace=actualsize-sizetocompare;
 			}
-			for(int i=0;i<times2;i++){
+			for(int i=0;i<timesspace;i++){
 				list.add(999);
 			}
-			size+=times+times2;
+			sizetocompare+=timesnum+timesspace;
 		}
-		for(int i=0;i<X;i++){
-			for(int j=0;j<Y;j++){
-				Object ob=list.get(next++);
-					mat[i][j]=(int)ob;
+		for(int i=0;i<width;i++){
+			for(int j=0;j<hieght;j++){
+				Object ob=list.get(nextVal++);
+					matrix[i][j]=(int)ob;
 				
 			}
 		}
-		for(int i=0;i<Y;i++){
-			for(int j=0;j<X;j++){
-				if(mat[j][i]==999){
+		for(int i=0;i<hieght;i++){
+			for(int j=0;j<width;j++){
+				if(matrix[j][i]==999){
 					System.out.print(" ");
 				}
 				else
-				System.out.print(mat[j][i]);
+				System.out.print(matrix[j][i]);
 			}
 			System.out.println("");
 		}
