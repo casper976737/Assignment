@@ -16,6 +16,9 @@ public class Pattern3d {
 						if(k+1==half-i)
 						System.out.print(" ");
 					}
+					if(k==num-2*i-1){
+						break;
+					}
 					System.out.print(" ");
 				}
 			}
@@ -28,6 +31,9 @@ public class Pattern3d {
 					for(int l=0;l<2*i-2;l++){
 						if(k+1==half-i)
 						System.out.print(" ");
+					}
+					if(k==num-2*i||k==num-1){
+						break;
 					}
 					System.out.print(" ");
 				}

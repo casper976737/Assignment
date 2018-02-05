@@ -10,6 +10,9 @@ public class Pattern3a {
 			}
 			for(int k=0;k<i;k++){
 				System.out.print("*");
+				if(k==i-1){
+					break;
+				}
 				System.out.print(" ");
 			}
 			System.out.println("");

@@ -17,6 +17,9 @@ public class Pattern3e {
 						System.out.print(" ");
 						
 					}
+					if(k==0){
+						break;
+					}
 					System.out.print(" ");
 				}
 			}
@@ -29,6 +32,9 @@ public class Pattern3e {
 					for(int l=0;l<2*i-2;l++){
 						if(k==half-i)
 						System.out.print(" ");		
+					}
+					if(k==0){
+						break;
 					}
 					System.out.print(" ");
 				}

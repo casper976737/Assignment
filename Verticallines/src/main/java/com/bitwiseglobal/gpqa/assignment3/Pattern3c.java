@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Pattern3c {
 
-	public void patternPrinter3c(double num){
+	public void patternPrinter3c(int num){
 		int half=(int) Math.round(num/2);
 			for(int k=(int) num;k>=half;k--){
 				for(int j=0;j<k;j++){
